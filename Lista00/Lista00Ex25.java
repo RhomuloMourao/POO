@@ -15,26 +15,26 @@ public class Lista00Ex25 {
         System.out.print("Digite o numero de colunas: ");
         int M = teclado.nextInt();
         
-        int O[][] = new int [N][M];
-		int OCrescente[][] = new int [N][M];
+        int Y[][] = new int [N][M];
+		int YCrescente[][] = new int [N][M];
 		int aux = 0;
 		
 		
-         for (int linhas = 0 ; linhas < O.length ; linhas++) {
-            for (int colunas = 0 ; colunas < O[linhas].length ; colunas++) {
+         for (int linhas = 0 ; linhas < Y.length ; linhas++) {
+            for (int colunas = 0 ; colunas < Y[linhas].length ; colunas++) {
                 
             int Random = (int) (Math.random() * 100 );    
-            O[linhas][colunas] = Random;
-            OCrescente[linhas][colunas] = O[linhas][colunas];
-            for (int linhas2 = 0 ; linhas2 < O.length ; linhas2++) {
-					for (int colunas2 = 0 ; colunas2 < O[linhas2].length ; colunas2++) {
+            Y[linhas][colunas] = Random;
+            YCrescente[linhas][colunas] = Y[linhas][colunas];
+            for (int linhas2 = 0 ; linhas2 < Y.length ; linhas2++) {
+					for (int colunas2 = 0 ; colunas2 < Y[linhas2].length ; colunas2++) {
 				
               
-					if(OCrescente[linhas][colunas] <  OCrescente[linhas2][colunas2]){
+					if(YCrescente[linhas][colunas] <  YCrescente[linhas2][colunas2]){
 					
-					aux = OCrescente[linhas][colunas];
-					OCrescente[linhas][colunas] = OCrescente[linhas2][colunas2] ;
-					OCrescente[linhas2][colunas2] = aux;
+					aux = YCrescente[linhas][colunas];
+					YCrescente[linhas][colunas] = YCrescente[linhas2][colunas2] ;
+					YCrescente[linhas2][colunas2] = aux;
 					
 					
 					}
@@ -45,10 +45,10 @@ public class Lista00Ex25 {
        
         System.out.println("/////////////////// Matriz nao ordenada ///////////////////");
         
-        for (int i = 0 ; i < O.length ; i++) {
-            for (int j = 0 ; j < O[i].length ; j++) {
+        for (int i = 0 ; i < Y.length ; i++) {
+            for (int j = 0 ; j < Y[i].length ; j++) {
                 
-               System.out.print(O[i][j] + "\t"); 
+               System.out.print(Y[i][j] + "\t"); 
                 
                
                 }
@@ -56,10 +56,10 @@ public class Lista00Ex25 {
             }
             
             System.out.println("\n\n/////////////////// Matriz em ordem crescente ///////////////////");
-             for (int i = 0 ; i < OCrescente.length ; i++) {
-				for (int j = 0 ; j < OCrescente[i].length ; j++) {
+             for (int i = 0 ; i < YCrescente.length ; i++) {
+				for (int j = 0 ; j < YCrescente[i].length ; j++) {
                 
-               System.out.print(OCrescente[i][j] + "\t"); 
+               System.out.print(YCrescente[i][j] + "\t"); 
                 
                
                 }

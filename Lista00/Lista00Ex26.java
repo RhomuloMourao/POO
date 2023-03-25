@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class Lista00Ex26 {
 	
 	public static void main (String[] args) {
+		
 		Scanner teclado = new Scanner(System.in);
         
         System.out.print("Digite o numero de linhas: ");
@@ -15,27 +16,28 @@ public class Lista00Ex26 {
         System.out.print("Digite o numero de colunas: ");
         int M = teclado.nextInt();
         
-        int O[][] = new int [N][M];
-		int ODecrescente[][] = new int [N][M];
+        int W[][] = new int [N][M];
+		int WDecrescente[][] = new int [N][M];
 		int aux = 0;
 		
 		
-         for (int linhas = 0 ; linhas < O.length ; linhas++) {
-            for (int colunas = 0 ; colunas < O[linhas].length ; colunas++) {
-                
-			int Random = (int) (Math.random() * 100 );    
-			O[linhas][colunas] = Random;
-			ODecrescente[linhas][colunas] = O[linhas][colunas];
-				
-            for (int linhas2 = 0 ; linhas2 < O.length ; linhas2++) {
-				for (int colunas2 = 0 ; colunas2 < O[linhas2].length ; colunas2++) {
-				
-              
-					if(ODecrescente[linhas][colunas] >  ODecrescente[linhas2][colunas2]){
-					
-					aux = ODecrescente[linhas][colunas];
-					ODecrescente[linhas][colunas] = ODecrescente[linhas2][colunas2] ;
-					ODecrescente[linhas2][colunas2] = aux;
+		for (int linhas = 0; linhas < W.length; linhas++) {
+            for (int colunas = 0; colunas < W[linhas].length; colunas++) {
+                int Random = (int) (Math.random() * 100);
+                W[linhas][colunas] = Random;
+                WDecrescente[linhas][colunas] = W[linhas][colunas];
+            }
+        }
+        
+         for (int linhas = 0 ; linhas < WDecrescente.length ; linhas++) {
+            for (int colunas = 0 ; colunas < WDecrescente[linhas].length ; colunas++) {
+           
+            for (int linhas2 = 0 ; linhas2 < W.length ; linhas2++) {
+				for (int colunas2 = 0 ; colunas2 < WDecrescente[linhas2].length ; colunas2++) {
+					if(WDecrescente[linhas][colunas] >  WDecrescente[linhas2][colunas2]){
+					aux = WDecrescente[linhas][colunas];
+					WDecrescente[linhas][colunas] = WDecrescente[linhas2][colunas2] ;
+					WDecrescente[linhas2][colunas2] = aux;
 					
 					}
 				}
@@ -45,10 +47,10 @@ public class Lista00Ex26 {
        
         System.out.println("/////////////////// Matriz nao ordenada ///////////////////");
         
-        for (int i = 0 ; i < O.length ; i++) {
-            for (int j = 0 ; j < O[i].length ; j++) {
+        for (int i = 0 ; i < W.length ; i++) {
+            for (int j = 0 ; j < W[i].length ; j++) {
                 
-               System.out.print(O[i][j] + "\t"); 
+               System.out.print(W[i][j] + "\t"); 
                 
                
                 }
@@ -56,12 +58,9 @@ public class Lista00Ex26 {
             }
             
             System.out.println("\n\n/////////////////// Matriz em ordem Decrescente ///////////////////");
-             for (int i = 0 ; i < ODecrescente.length ; i++) {
-				for (int j = 0 ; j < ODecrescente[i].length ; j++) {
-                
-               System.out.print(ODecrescente[i][j] + "\t"); 
-                
-               
+             for (int i = 0 ; i < WDecrescente.length ; i++) {
+				for (int j = 0 ; j < WDecrescente[i].length ; j++) {
+					System.out.print(WDecrescente[i][j] + "\t"); 
                 }
                 System.out.println();
             }  
